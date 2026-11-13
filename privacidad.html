@@ -15,14 +15,18 @@
     <h1>Política de privacidad</h1>
     <p class="sub">Última actualización: 13 de noviembre de 2026</p>
 
-    <p>El Publicador alan.hiskin (“la aplicación”) es una herramienta de uso personal que su dueño usa para preparar sus propios videos y conectarlos con su canal de YouTube. La aplicación funciona de forma local en la computadora de quien la usa. No tiene servidores propios, no tiene cuentas de usuario propias y no está disponible para el público.</p>
+    <p>El Publicador alan.hiskin (“la aplicación”) es una herramienta de uso personal que su dueño usa para preparar sus propios videos y conectarlos con su canal de YouTube y su cuenta de Instagram. La aplicación funciona de forma local en la computadora de quien la usa. No tiene servidores propios, no tiene cuentas de usuario propias y no está disponible para el público.</p>
 
     <h2>Uso de los Servicios de la API de YouTube</h2>
     <p>La aplicación usa los <b>Servicios de la API de YouTube</b> para conectarse con la cuenta de YouTube del usuario. Al usar la aplicación, aceptás los <a href="https://www.youtube.com/t/terms">Términos del Servicio de YouTube</a>. Google trata los datos según la <a href="https://policies.google.com/privacy">Política de Privacidad de Google</a>.</p>
 
+    <h2>Uso de las plataformas de Meta</h2>
+    <p>La aplicación se conecta con Instagram mediante el inicio de sesión oficial de Meta (Facebook Login para empresas). Meta trata los datos según su <a href="https://www.facebook.com/privacy/policy/">Política de privacidad</a>, y la aplicación cumple las <a href="https://developers.facebook.com/terms/">Condiciones de la Plataforma de Meta</a>.</p>
+
     <h2>Estado actual de la aplicación</h2>
     <ul>
       <li><b>YouTube:</b> la aplicación se conecta para <b>identificar el canal</b> y para <b>subir los videos que el usuario aprueba</b>. La subida real solo funciona si el usuario la activa en la aplicación; si no, todo se simula sin enviar nada a YouTube.</li>
+      <li><b>Instagram:</b> la aplicación se conecta solo para <b>identificar la cuenta</b> que el usuario autoriza. Pide los permisos de ver la cuenta y de publicar, pero la publicación en Instagram <b>todavía no está activa</b>: no se publica nada.</li>
       <li><b>Otras plataformas:</b> la aplicación no se conecta con ninguna otra red social.</li>
     </ul>
 
@@ -30,6 +34,8 @@
     <ul>
       <li><b>Datos del canal de YouTube:</b> el identificador, el nombre y el nombre de usuario del canal conectado, para mostrar qué canal está conectado.</li>
       <li><b>Credenciales de acceso de Google (tokens OAuth):</b> necesarias para consultar YouTube en nombre del usuario. La aplicación nunca ve ni guarda la contraseña de Google: el inicio de sesión se hace en la página oficial de Google.</li>
+      <li><b>Datos de la cuenta de Instagram:</b> el identificador, el nombre de usuario y el nombre de la cuenta autorizada, para mostrar qué cuenta está conectada.</li>
+      <li><b>Credencial de acceso de Meta:</b> necesaria para consultar Instagram en nombre del usuario, limitada a la cuenta que él elige al conectar. La aplicación nunca ve ni guarda la contraseña de Facebook ni de Instagram: el inicio de sesión se hace en la página oficial de Meta.</li>
       <li><b>Textos de publicación:</b> el título, la descripción y los hashtags que el usuario escribe en la aplicación para cada video.</li>
       <li><b>Historial:</b> el estado de preparación, aprobación y publicación de cada video, con sus fechas, y el identificador y el enlace que YouTube asigna a cada video subido.</li>
     </ul>
@@ -43,21 +49,22 @@
     <h2>Dónde se guarda y con quién se comparte</h2>
     <ul>
       <li>La información se guarda <b>solo en la computadora del usuario</b>. La aplicación no envía datos a servidores propios ni a terceros.</li>
-      <li>La única comunicación externa de la aplicación es con <b>Google y YouTube</b>, a través de sus servicios oficiales, para hacer lo que el usuario pide.</li>
+      <li>La única comunicación externa de la aplicación es con <b>Google (YouTube) y Meta (Instagram)</b>, a través de sus servicios oficiales, para hacer lo que el usuario pide.</li>
+      <li>Al conectar Instagram, Meta devuelve un código de un solo uso a través de la página <a href="meta-callback.html">meta-callback.html</a> de este sitio, que lo reenvía de inmediato a la aplicación en la computadora del usuario. Esa página no guarda ni envía datos a ningún otro lugar.</li>
       <li>La aplicación no muestra publicidad, no permite que terceros muestren contenido o anuncios y no usa cookies ni tecnologías de seguimiento.</li>
     </ul>
 
     <h2>Cuánto tiempo se conserva</h2>
-    <p>Las credenciales de acceso se conservan en la computadora del usuario hasta que él desconecta la cuenta desde la aplicación o revoca el acceso desde Google. Al tocar “Desconectar”, la aplicación le pide a Google que revoque el permiso y borra las credenciales de la computadora. Los textos y el historial se conservan en la computadora del usuario hasta que él los borre.</p>
+    <p>Las credenciales de acceso se conservan en la computadora del usuario hasta que él desconecta la cuenta desde la aplicación o revoca el acceso desde Google o Meta. Al tocar “Desconectar”, la aplicación le pide a la plataforma que retire el permiso y borra las credenciales de la computadora. Los textos y el historial se conservan en la computadora del usuario hasta que él los borre.</p>
 
     <h2>Cómo revocar el acceso</h2>
-    <p>Podés quitarle a la aplicación el acceso a tu cuenta en cualquier momento desde la <a href="https://security.google.com/settings/security/permissions">página de permisos de seguridad de Google</a>, o con el botón “Desconectar” dentro de la aplicación.</p>
+    <p>Podés quitarle a la aplicación el acceso a tu cuenta en cualquier momento desde la <a href="https://security.google.com/settings/security/permissions">página de permisos de seguridad de Google</a>, desde la <a href="https://www.facebook.com/settings/?tab=business_tools">configuración de integraciones comerciales de Facebook</a> (para Instagram), o con el botón “Desconectar” dentro de la aplicación.</p>
 
     <h2>Política de datos de las API de Google</h2>
     <p>El uso y la transferencia de la información recibida de las API de Google cumplen con la <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de Datos del Usuario de los Servicios de las API de Google</a>, incluidos los requisitos de Uso Limitado.</p>
 
     <h2>Este sitio web</h2>
-    <p>Estas páginas informativas están alojadas en GitHub Pages. No usan cookies, analíticas ni contenido de terceros. GitHub puede registrar datos técnicos de las visitas según su <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">declaración de privacidad</a>.</p>
+    <p>Estas páginas informativas están alojadas en GitHub Pages. No usan cookies, analíticas ni contenido de terceros. La página meta-callback.html solo contiene un script que reenvía la conexión de Meta a la aplicación local. GitHub puede registrar datos técnicos de las visitas según su <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">declaración de privacidad</a>.</p>
 
     <h2>Cambios en esta política</h2>
     <p>Si cambia el uso de los datos o la aplicación se conecta con otras plataformas, esta página se actualizará antes de que el cambio entre en funcionamiento, con una nueva fecha de actualización.</p>

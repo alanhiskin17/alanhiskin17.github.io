@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Volviendo al Publicador</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div class="envoltura">
+    <header><span class="punto"></span>Publicador alan.hiskin</header>
+    <h1 style="margin-top:32px">Volviendo al Publicador…</h1>
+    <p class="sub">Esta página solo devuelve la conexión de Meta al Publicador que funciona en tu propia computadora. No guarda ni envía datos a ningún otro lugar.</p>
+    <p id="nota"></p>
+  </div>
+  <script>
+    // Reenvía únicamente "code", "state" y los avisos de error de Meta al panel local (siempre la misma dirección fija).
+    (function () {
+      var entrada = new URLSearchParams(location.search);
+      var salida = new URLSearchParams();
+      ["code", "state", "error", "error_reason", "error_description"].forEach(function (k) {
+        var v = entrada.get(k);
+        if (v && v.length < 2000) salida.set(k, v);
+      });
+      if (!salida.get("state")) { document.getElementById("nota").textContent = "No hay ninguna conexión para devolver. Podés cerrar esta página."; return; }
+      location.replace("http://localhost:4317/oauth/meta?" + salida.toString());
+    })();
+  </script>
+</body>
+</html>
