@@ -26,7 +26,7 @@
     <h2>Estado actual de la aplicación</h2>
     <ul>
       <li><b>YouTube:</b> la aplicación se conecta para <b>identificar el canal</b> y para <b>subir los videos que el usuario aprueba</b>. La subida real solo funciona si el usuario la activa en la aplicación; si no, todo se simula sin enviar nada a YouTube.</li>
-      <li><b>Instagram:</b> la aplicación se conecta solo para <b>identificar la cuenta</b> que el usuario autoriza. Pide los permisos de ver la cuenta y de publicar, pero la publicación en Instagram <b>todavía no está activa</b>: no se publica nada.</li>
+      <li><b>Instagram:</b> la aplicación se conecta para <b>identificar la cuenta</b> que el usuario autoriza y para <b>publicar los Reels que el usuario aprueba</b>, como Trial Reel o Reel normal. La publicación real solo funciona si el usuario la activa en la aplicación; si no, todo se simula sin enviar nada a Meta.</li>
       <li><b>Otras plataformas:</b> la aplicación no se conecta con ninguna otra red social.</li>
     </ul>
 
@@ -37,14 +37,23 @@
       <li><b>Datos de la cuenta de Instagram:</b> el identificador, el nombre de usuario y el nombre de la cuenta autorizada, para mostrar qué cuenta está conectada.</li>
       <li><b>Credencial de acceso de Meta:</b> necesaria para consultar Instagram en nombre del usuario, limitada a la cuenta que él elige al conectar. La aplicación nunca ve ni guarda la contraseña de Facebook ni de Instagram: el inicio de sesión se hace en la página oficial de Meta.</li>
       <li><b>Textos de publicación:</b> el título, la descripción y los hashtags que el usuario escribe en la aplicación para cada video.</li>
-      <li><b>Historial:</b> el estado de preparación, aprobación y publicación de cada video, con sus fechas, y el identificador y el enlace que YouTube asigna a cada video subido.</li>
+      <li><b>Historial:</b> el estado de preparación, aprobación y publicación de cada video, con sus fechas, el identificador y el enlace que YouTube o Instagram asignan a cada publicación, y la marca que el usuario agrega cuando ya publicó un video a mano.</li>
+      <li><b>Publicaciones recientes de Instagram (solo para evitar duplicados):</b> antes de reintentar una publicación, la aplicación consulta el estado del envío en curso y los últimos Reels de la cuenta (identificador, texto, fecha y enlace) para comprobar si ya se publicó. Esa información se usa en el momento y no se guarda.</li>
     </ul>
 
     <h2>Subida de videos</h2>
     <p>Con el permiso de subir videos que el usuario otorga en la pantalla oficial de Google, la aplicación envía a YouTube únicamente los videos que el usuario revisa y aprueba en forma explícita, uno por uno. Con cada video envía el título, la descripción, los hashtags y la visibilidad (privado, no listado o público) que el usuario elige al aprobar. Después de subirlo, consulta a YouTube el estado y la visibilidad del video para mostrárselos al usuario.</p>
 
+    <h2>Publicación de Reels en Instagram</h2>
+    <p>Con el permiso de publicar que el usuario otorga en la pantalla oficial de Meta, la aplicación envía a Instagram únicamente los videos que el usuario revisa y aprueba en forma explícita, uno por uno, junto con el texto (descripción y hashtags) y la modalidad que él elige: Trial Reel o Reel normal. El video se envía directamente desde la computadora del usuario a Meta, con la carga oficial de Meta.</p>
+    <ul>
+      <li><b>Trial Reel:</b> es una función de Instagram por la que el Reel se muestra primero a personas que no siguen la cuenta. El usuario puede elegir que no se comparta automáticamente con sus seguidores, o que Instagram lo comparta si funciona bien. <b>Un Trial Reel no es una publicación privada:</b> lo pueden ver personas que no siguen la cuenta.</li>
+      <li><b>Reel normal:</b> se publica en el perfil y lo pueden ver los seguidores y el público.</li>
+    </ul>
+    <p>Instagram no ofrece publicación privada: cualquier Reel publicado puede ser visible públicamente.</p>
+
     <h2>Cómo se usa esa información</h2>
-    <p>Solo para mostrar qué canal está conectado, preparar las publicaciones y subir lo que el usuario aprueba. La aplicación no usa los datos para publicidad, no crea perfiles, no vende datos y no los usa para ningún otro fin.</p>
+    <p>Solo para mostrar qué cuentas están conectadas, preparar las publicaciones y publicar lo que el usuario aprueba. La aplicación no usa los datos para publicidad, no crea perfiles, no vende datos y no los usa para ningún otro fin.</p>
 
     <h2>Dónde se guarda y con quién se comparte</h2>
     <ul>
@@ -55,10 +64,17 @@
     </ul>
 
     <h2>Cuánto tiempo se conserva</h2>
-    <p>Las credenciales de acceso se conservan en la computadora del usuario hasta que él desconecta la cuenta desde la aplicación o revoca el acceso desde Google o Meta. Al tocar “Desconectar”, la aplicación le pide a la plataforma que retire el permiso y borra las credenciales de la computadora. Los textos y el historial se conservan en la computadora del usuario hasta que él los borre.</p>
+    <p>Las credenciales de acceso y los datos de la cuenta conectada se conservan en la computadora del usuario hasta que él desconecta la cuenta desde la aplicación. Los textos y el historial de publicaciones se conservan en la computadora del usuario hasta que él los borre.</p>
 
-    <h2>Cómo revocar el acceso</h2>
-    <p>Podés quitarle a la aplicación el acceso a tu cuenta en cualquier momento desde la <a href="https://security.google.com/settings/security/permissions">página de permisos de seguridad de Google</a>, desde la <a href="https://www.facebook.com/settings/?tab=business_tools">configuración de integraciones comerciales de Facebook</a> (para Instagram), o con el botón “Desconectar” dentro de la aplicación.</p>
+    <h2 id="borrado">Cómo eliminar tus datos</h2>
+    <p>La aplicación no tiene servidores: todos los datos están en la computadora de quien la usa, y se eliminan así:</p>
+    <ol>
+      <li><b>Credenciales y datos de la cuenta conectada:</b> con el botón “Desconectar” de cada plataforma, la aplicación borra de la computadora la credencial y los datos de esa cuenta (identificador, nombre y nombre de usuario), y le pide a Google o a Meta que retire el permiso. En Instagram, si Meta no confirma el retiro, la aplicación lo avisa. En YouTube la aplicación no muestra la respuesta de Google. En ambos casos, el paso 2 permite comprobar que el permiso se haya quitado.</li>
+      <li><b>Permiso otorgado a la aplicación:</b> se puede retirar en cualquier momento desde la <a href="https://security.google.com/settings/security/permissions">página de permisos de seguridad de Google</a> (YouTube) o desde la <a href="https://www.facebook.com/settings/?tab=business_tools">configuración de integraciones comerciales de Facebook</a> (Instagram).</li>
+      <li><b>Textos e historial de publicaciones:</b> se eliminan borrando la base de datos local de la aplicación, con la aplicación cerrada. Esto no borra las credenciales, que se guardan aparte.</li>
+      <li><b>Publicaciones ya hechas en YouTube o Instagram:</b> se eliminan desde YouTube o Instagram. La aplicación no las borra.</li>
+    </ol>
+    <p>Para consultar sobre el borrado de datos, se puede escribir en la sección de contacto. Esos mensajes son públicos: no incluyas datos personales.</p>
 
     <h2>Política de datos de las API de Google</h2>
     <p>El uso y la transferencia de la información recibida de las API de Google cumplen con la <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de Datos del Usuario de los Servicios de las API de Google</a>, incluidos los requisitos de Uso Limitado.</p>
@@ -70,7 +86,7 @@
     <p>Si cambia el uso de los datos o la aplicación se conecta con otras plataformas, esta página se actualizará antes de que el cambio entre en funcionamiento, con una nueva fecha de actualización.</p>
 
     <h2>Contacto</h2>
-    <p>Para consultas o reclamos sobre esta política, podés abrir una consulta en la sección <a href="https://github.com/alanhiskin17/alanhiskin17.github.io/issues">Issues del repositorio de este sitio en GitHub</a>. Las consultas en esa sección son públicas: no incluyas datos personales.</p>
+    <p>Para consultas o reclamos sobre esta política, incluidas las solicitudes sobre el borrado de datos, podés abrir una consulta en la sección <a href="https://github.com/alanhiskin17/alanhiskin17.github.io/issues">Issues del repositorio de este sitio en GitHub</a>. <b>Las consultas en esa sección son públicas:</b> no incluyas datos personales.</p>
 
     <footer>Publicador alan.hiskin · <a href="./">Inicio</a> · <a href="terminos.html">Términos</a></footer>
   </div>
