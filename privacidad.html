@@ -22,7 +22,7 @@
 
     <h2>Estado actual de la aplicación</h2>
     <ul>
-      <li><b>YouTube:</b> la aplicación se conecta para <b>identificar el canal</b>. La subida de videos está en preparación y todavía no está activa.</li>
+      <li><b>YouTube:</b> la aplicación se conecta para <b>identificar el canal</b> y para <b>subir los videos que el usuario aprueba</b>. La subida real solo funciona si el usuario la activa en la aplicación; si no, todo se simula sin enviar nada a YouTube.</li>
       <li><b>Otras plataformas:</b> la aplicación no se conecta con ninguna otra red social.</li>
     </ul>
 
@@ -31,14 +31,14 @@
       <li><b>Datos del canal de YouTube:</b> el identificador, el nombre y el nombre de usuario del canal conectado, para mostrar qué canal está conectado.</li>
       <li><b>Credenciales de acceso de Google (tokens OAuth):</b> necesarias para consultar YouTube en nombre del usuario. La aplicación nunca ve ni guarda la contraseña de Google: el inicio de sesión se hace en la página oficial de Google.</li>
       <li><b>Textos de publicación:</b> el título, la descripción y los hashtags que el usuario escribe en la aplicación para cada video.</li>
-      <li><b>Historial:</b> el estado de preparación y aprobación de cada video, con sus fechas.</li>
+      <li><b>Historial:</b> el estado de preparación, aprobación y publicación de cada video, con sus fechas, y el identificador y el enlace que YouTube asigna a cada video subido.</li>
     </ul>
 
-    <h2>Subida de videos (cuando se active)</h2>
-    <p>Cuando la subida de videos se active, la aplicación enviará a YouTube únicamente los videos que el usuario revise y apruebe en forma explícita, junto con el título, la descripción, los hashtags y la visibilidad que él elija. Guardará también el identificador que YouTube asigne a cada video subido. Para eso pedirá a Google, en la pantalla oficial de permisos, el permiso de subir videos a la cuenta del usuario.</p>
+    <h2>Subida de videos</h2>
+    <p>Con el permiso de subir videos que el usuario otorga en la pantalla oficial de Google, la aplicación envía a YouTube únicamente los videos que el usuario revisa y aprueba en forma explícita, uno por uno. Con cada video envía el título, la descripción, los hashtags y la visibilidad (privado, no listado o público) que el usuario elige al aprobar. Después de subirlo, consulta a YouTube el estado y la visibilidad del video para mostrárselos al usuario.</p>
 
     <h2>Cómo se usa esa información</h2>
-    <p>Solo para mostrar qué canal está conectado, preparar las publicaciones y, cuando la subida esté activa, publicar lo que el usuario aprueba. La aplicación no usa los datos para publicidad, no crea perfiles, no vende datos y no los usa para ningún otro fin.</p>
+    <p>Solo para mostrar qué canal está conectado, preparar las publicaciones y subir lo que el usuario aprueba. La aplicación no usa los datos para publicidad, no crea perfiles, no vende datos y no los usa para ningún otro fin.</p>
 
     <h2>Dónde se guarda y con quién se comparte</h2>
     <ul>
