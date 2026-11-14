@@ -15,7 +15,7 @@
     <h1>Política de privacidad</h1>
     <p class="sub">Última actualización: 13 de noviembre de 2026</p>
 
-    <p>El Publicador alan.hiskin (“la aplicación”) es una herramienta de uso personal que su dueño usa para preparar sus propios videos y conectarlos con su canal de YouTube y su cuenta de Instagram. La aplicación funciona de forma local en la computadora de quien la usa. No tiene servidores propios, no tiene cuentas de usuario propias y no está disponible para el público.</p>
+    <p>El Publicador alan.hiskin (“la aplicación”) es una herramienta de uso personal que su dueño usa para preparar sus propios videos y conectarlos con su canal de YouTube y sus cuentas de Instagram y TikTok. La aplicación funciona de forma local en la computadora de quien la usa. No tiene servidores propios, no tiene cuentas de usuario propias y no está disponible para el público.</p>
 
     <h2>Uso de los Servicios de la API de YouTube</h2>
     <p>La aplicación usa los <b>Servicios de la API de YouTube</b> para conectarse con la cuenta de YouTube del usuario. Al usar la aplicación, aceptás los <a href="https://www.youtube.com/t/terms">Términos del Servicio de YouTube</a>. Google trata los datos según la <a href="https://policies.google.com/privacy">Política de Privacidad de Google</a>.</p>
@@ -23,10 +23,14 @@
     <h2>Uso de las plataformas de Meta</h2>
     <p>La aplicación se conecta con Instagram mediante el inicio de sesión oficial de Meta (Facebook Login para empresas). Meta trata los datos según su <a href="https://www.facebook.com/privacy/policy/">Política de privacidad</a>, y la aplicación cumple las <a href="https://developers.facebook.com/terms/">Condiciones de la Plataforma de Meta</a>.</p>
 
+    <h2>Uso de TikTok</h2>
+    <p>La aplicación se conecta con TikTok mediante el inicio de sesión oficial de TikTok (Login Kit) y su API oficial de publicación de contenido. TikTok trata los datos según su <a href="https://www.tiktok.com/legal/privacy-policy">Política de privacidad</a>, y la aplicación cumple las <a href="https://www.tiktok.com/legal/page/global/tik-tok-developer-terms-of-service/en">Condiciones para desarrolladores de TikTok</a>.</p>
+
     <h2>Estado actual de la aplicación</h2>
     <ul>
       <li><b>YouTube:</b> la aplicación se conecta para <b>identificar el canal</b> y para <b>subir los videos que el usuario aprueba</b>. La subida real solo funciona si el usuario la activa en la aplicación; si no, todo se simula sin enviar nada a YouTube.</li>
-      <li><b>Instagram:</b> la aplicación se conecta para <b>identificar la cuenta</b> que el usuario autoriza y para <b>publicar los Reels que el usuario aprueba</b>, como Trial Reel o Reel normal. La publicación real solo funciona si el usuario la activa en la aplicación; si no, todo se simula sin enviar nada a Meta.</li>
+      <li><b>Instagram:</b> la aplicación se conecta para <b>identificar la cuenta</b> que el usuario autoriza y para <b>publicar los Reels que el usuario aprueba</b>. La publicación real solo funciona si el usuario la activa en la aplicación; si no, todo se simula sin enviar nada a Meta.</li>
+      <li><b>TikTok:</b> la aplicación se conecta para <b>identificar la cuenta</b> y para <b>enviar como borrador</b> a la bandeja de TikTok los videos que el usuario aprueba. <b>La aplicación nunca publica en TikTok:</b> el usuario termina cada publicación en la app de TikTok. El envío solo funciona si el usuario lo activa en la aplicación.</li>
       <li><b>Otras plataformas:</b> la aplicación no se conecta con ninguna otra red social.</li>
     </ul>
 
@@ -36,8 +40,10 @@
       <li><b>Credenciales de acceso de Google (tokens OAuth):</b> necesarias para consultar YouTube en nombre del usuario. La aplicación nunca ve ni guarda la contraseña de Google: el inicio de sesión se hace en la página oficial de Google.</li>
       <li><b>Datos de la cuenta de Instagram:</b> el identificador, el nombre de usuario y el nombre de la cuenta autorizada, para mostrar qué cuenta está conectada.</li>
       <li><b>Credencial de acceso de Meta:</b> necesaria para consultar Instagram en nombre del usuario, limitada a la cuenta que él elige al conectar. La aplicación nunca ve ni guarda la contraseña de Facebook ni de Instagram: el inicio de sesión se hace en la página oficial de Meta.</li>
+      <li><b>Datos de la cuenta de TikTok:</b> el identificador y el nombre visible de la cuenta autorizada, para mostrar qué cuenta está conectada.</li>
+      <li><b>Credencial de acceso de TikTok:</b> necesaria para enviar borradores en nombre del usuario. La aplicación nunca ve ni guarda la contraseña de TikTok: el inicio de sesión se hace en la página oficial de TikTok.</li>
       <li><b>Textos de publicación:</b> el título, la descripción y los hashtags que el usuario escribe en la aplicación para cada video.</li>
-      <li><b>Historial:</b> el estado de preparación, aprobación y publicación de cada video, con sus fechas, el identificador y el enlace que YouTube o Instagram asignan a cada publicación, y la marca que el usuario agrega cuando ya publicó un video a mano.</li>
+      <li><b>Historial:</b> el estado de preparación, aprobación y publicación de cada video, con sus fechas, el identificador y el enlace que YouTube o Instagram asignan a cada publicación, el identificador de cada envío de borrador a TikTok, y la marca que el usuario agrega cuando ya publicó un video a mano.</li>
       <li><b>Publicaciones recientes de Instagram (solo para evitar duplicados):</b> antes de reintentar una publicación, la aplicación consulta el estado del envío en curso y los últimos Reels de la cuenta (identificador, texto, fecha y enlace) para comprobar si ya se publicó. Esa información se usa en el momento y no se guarda.</li>
     </ul>
 
@@ -45,12 +51,11 @@
     <p>Con el permiso de subir videos que el usuario otorga en la pantalla oficial de Google, la aplicación envía a YouTube únicamente los videos que el usuario revisa y aprueba en forma explícita, uno por uno. Con cada video envía el título, la descripción, los hashtags y la visibilidad (privado, no listado o público) que el usuario elige al aprobar. Después de subirlo, consulta a YouTube el estado y la visibilidad del video para mostrárselos al usuario.</p>
 
     <h2>Publicación de Reels en Instagram</h2>
-    <p>Con el permiso de publicar que el usuario otorga en la pantalla oficial de Meta, la aplicación envía a Instagram únicamente los videos que el usuario revisa y aprueba en forma explícita, uno por uno, junto con el texto (descripción y hashtags) y la modalidad que él elige: Trial Reel o Reel normal. El video se envía directamente desde la computadora del usuario a Meta, con la carga oficial de Meta.</p>
-    <ul>
-      <li><b>Trial Reel:</b> es una función de Instagram por la que el Reel se muestra primero a personas que no siguen la cuenta. El usuario puede elegir que no se comparta automáticamente con sus seguidores, o que Instagram lo comparta si funciona bien. <b>Un Trial Reel no es una publicación privada:</b> lo pueden ver personas que no siguen la cuenta.</li>
-      <li><b>Reel normal:</b> se publica en el perfil y lo pueden ver los seguidores y el público.</li>
-    </ul>
-    <p>Instagram no ofrece publicación privada: cualquier Reel publicado puede ser visible públicamente.</p>
+    <p>Con el permiso de publicar que el usuario otorga en la pantalla oficial de Meta, la aplicación envía a Instagram únicamente los videos que el usuario revisa y aprueba en forma explícita, uno por uno, junto con el texto (descripción y hashtags) que él revisa. El video se envía directamente desde la computadora del usuario a Meta, con la carga oficial de Meta.</p>
+    <p>Los Reels se publican en el perfil y los pueden ver los seguidores y el público: Instagram no ofrece publicación privada.</p>
+
+    <h2>Envío de borradores a TikTok</h2>
+    <p>Con el permiso que el usuario otorga en la pantalla oficial de TikTok, la aplicación envía a la bandeja de TikTok, como <b>borrador</b>, únicamente los videos que el usuario aprueba, uno por uno, directamente desde su computadora. TikTok no recibe el texto por esta vía: el usuario lo copia y lo agrega en la app al terminar la publicación. Para no duplicar envíos, la aplicación consulta a TikTok el estado de cada envío. Un borrador no es público hasta que el usuario lo publica en la app de TikTok.</p>
 
     <h2>Cómo se usa esa información</h2>
     <p>Solo para mostrar qué cuentas están conectadas, preparar las publicaciones y publicar lo que el usuario aprueba. La aplicación no usa los datos para publicidad, no crea perfiles, no vende datos y no los usa para ningún otro fin.</p>
@@ -58,7 +63,7 @@
     <h2>Dónde se guarda y con quién se comparte</h2>
     <ul>
       <li>La información se guarda <b>solo en la computadora del usuario</b>. La aplicación no envía datos a servidores propios ni a terceros.</li>
-      <li>La única comunicación externa de la aplicación es con <b>Google (YouTube) y Meta (Instagram)</b>, a través de sus servicios oficiales, para hacer lo que el usuario pide.</li>
+      <li>La única comunicación externa de la aplicación es con <b>Google (YouTube), Meta (Instagram) y TikTok</b>, a través de sus servicios oficiales, para hacer lo que el usuario pide.</li>
       <li>Al conectar Instagram, Meta devuelve un código de un solo uso a través de la página <a href="meta-callback.html">meta-callback.html</a> de este sitio, que lo reenvía de inmediato a la aplicación en la computadora del usuario. Esa página no guarda ni envía datos a ningún otro lugar.</li>
       <li>La aplicación no muestra publicidad, no permite que terceros muestren contenido o anuncios y no usa cookies ni tecnologías de seguimiento.</li>
     </ul>
@@ -69,10 +74,10 @@
     <h2 id="borrado">Cómo eliminar tus datos</h2>
     <p>La aplicación no tiene servidores: todos los datos están en la computadora de quien la usa, y se eliminan así:</p>
     <ol>
-      <li><b>Credenciales y datos de la cuenta conectada:</b> con el botón “Desconectar” de cada plataforma, la aplicación borra de la computadora la credencial y los datos de esa cuenta (identificador, nombre y nombre de usuario), y le pide a Google o a Meta que retire el permiso. En Instagram, si Meta no confirma el retiro, la aplicación lo avisa. En YouTube la aplicación no muestra la respuesta de Google. En ambos casos, el paso 2 permite comprobar que el permiso se haya quitado.</li>
-      <li><b>Permiso otorgado a la aplicación:</b> se puede retirar en cualquier momento desde la <a href="https://security.google.com/settings/security/permissions">página de permisos de seguridad de Google</a> (YouTube) o desde la <a href="https://www.facebook.com/settings/?tab=business_tools">configuración de integraciones comerciales de Facebook</a> (Instagram).</li>
+      <li><b>Credenciales y datos de la cuenta conectada:</b> con el botón “Desconectar” de cada plataforma, la aplicación borra de la computadora la credencial y los datos de esa cuenta (identificador, nombre y nombre de usuario), y le pide a Google, a Meta o a TikTok que retire el permiso. En Instagram y TikTok, si la plataforma no confirma el retiro, la aplicación lo avisa. En YouTube la aplicación no muestra la respuesta de Google. En ambos casos, el paso 2 permite comprobar que el permiso se haya quitado.</li>
+      <li><b>Permiso otorgado a la aplicación:</b> se puede retirar en cualquier momento desde la <a href="https://security.google.com/settings/security/permissions">página de permisos de seguridad de Google</a> (YouTube) desde la <a href="https://www.facebook.com/settings/?tab=business_tools">configuración de integraciones comerciales de Facebook</a> (Instagram) o desde la app de TikTok, en la sección de seguridad y permisos de apps de la configuración (TikTok).</li>
       <li><b>Textos e historial de publicaciones:</b> se eliminan borrando la base de datos local de la aplicación, con la aplicación cerrada. Esto no borra las credenciales, que se guardan aparte.</li>
-      <li><b>Publicaciones ya hechas en YouTube o Instagram:</b> se eliminan desde YouTube o Instagram. La aplicación no las borra.</li>
+      <li><b>Publicaciones ya hechas en YouTube, Instagram o TikTok, y borradores en la bandeja de TikTok:</b> se eliminan desde cada plataforma. La aplicación no los borra.</li>
     </ol>
     <p>Para consultar sobre el borrado de datos, se puede escribir en la sección de contacto. Esos mensajes son públicos: no incluyas datos personales.</p>
 
